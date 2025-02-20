@@ -58,6 +58,17 @@
     border-radius: 6px;
 }
 
+.not-read-btn {
+    border: none;
+    color: #fff;
+    background-color: #fa0303;
+    width: 80px;
+    height: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
 .add-book-btn {
     position: fixed;
     bottom: 1.25rem;
