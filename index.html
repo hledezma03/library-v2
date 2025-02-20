@@ -26,22 +26,34 @@
                 <p class="book-pages">390</p>
                 <button class="read-btn">Read</button>
             </div>
-            <div class="card-container">
-                <button class="delete-btn">X</button>
-                <h2 class="book-title">4 Hours week</h2>
-                <p class="book-author">Tim Ferris</p>
-                <p class="book-pages">390</p>
-                <button class="read-btn">Read</button>
-            </div>
-            <div class="card-container">
-                <button class="delete-btn">X</button>
-                <h2 class="book-title">4 Hours week</h2>
-                <p class="book-author">Tim Ferris</p>
-                <p class="book-pages">390</p>
-                <button class="read-btn">Read</button>
-            </div>
-            <button class="add-book-btn">Add a book</button>
+            
         </main>
+        <dialog id="dialog">
+            <form method="dialog">
+                <p class="form-title">Book Info</p>
+                <ul>
+                    <li>
+                        <label for="form-book-title">Title</label>
+                        <input type="text" id="form-book-title" name="book-title">
+                    </li>
+                    <li>
+                        <label for="form-book-author">Author</label>
+                        <input type="text" id="form-book-author" name="book-author">
+                    </li>
+                    <li>
+                        <label for="form-book-pages">Number of pages</label>
+                        <input type="number" id="form-book-pages" name="book-pages">
+                    </li>
+                    <li>
+                        <label for="read-status" class="last-input-label">Did you read this book?</label>
+                        <input type="checkbox" id="read-status" name="read-status">
+                    </li>
+                </ul>
+                <button class="close-form-btn">Close</button>
+                <input id="submit-btn" type="submit">
+            </form>
+        </dialog>
+        <button class="add-book-btn">Add a book</button>
     </div>
 
     <script src="script.js"></script>
