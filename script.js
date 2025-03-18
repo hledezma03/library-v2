@@ -7,13 +7,16 @@ const mainSection = document.querySelector(".main-section");
 let myLibrary = [];
 let bookCounter = 0;
 
-function Book(id, title, author, pages, isRead) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
+class Book {
+    constructor(id, title, author, pages, isRead) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
 }
+
 
 
 
@@ -28,26 +31,29 @@ form.addEventListener("submit", (e) => {
     bookCounter++;
     myLibrary.push(book);
     form.reset();
-    makeCards(myLibrary);
+    new makeCards(myLibrary);
     console.log(myLibrary);
 })
 
-function makeCards(myLibrary) {
-    mainSection.innerHTML = '';
-    myLibrary.forEach(book => {
-
-        mainSection.innerHTML += 
-        `
-        <div class="card-container" data-id="${book.id}">
-            <button class="delete-btn">X</button>
-            <h2 class="book-title">${book.title}</h2>
-            <p class="book-author">${book.author}</p>
-            <p class="book-pages">${book.pages}</p>
-            <button class="${book.isRead == 'yes' ? 'read-btn' : 'not-read-btn'} toggle-btn">${book.isRead == 'yes' ? 'Read' : 'Not Read'}</button>
-        </div>
-        `
-    });
+class makeCards {
+    constructor(myLibrary) {
+        mainSection.innerHTML = '';
+        myLibrary.forEach(book => {
+    
+            mainSection.innerHTML += 
+            `
+            <div class="card-container" data-id="${book.id}">
+                <button class="delete-btn">X</button>
+                <h2 class="book-title">${book.title}</h2>
+                <p class="book-author">${book.author}</p>
+                <p class="book-pages">${book.pages}</p>
+                <button class="${book.isRead == 'yes' ? 'read-btn' : 'not-read-btn'} toggle-btn">${book.isRead == 'yes' ? 'Read' : 'Not Read'}</button>
+            </div>
+            `
+        });
+    }
 }
+
 
 
 
